@@ -1,0 +1,13 @@
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\bin\Debug\ESP32-BLE.exe.config
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\bin\Debug\ESP32-BLE.exe
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\bin\Debug\ESP32-BLE.pdb
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\obj\Debug\ESP32-BLE.csprojResolveAssemblyReference.cache
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\obj\Debug\ESP32_BLE.Form1.resources
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\obj\Debug\ESP32_BLE.Properties.Resources.resources
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\obj\Debug\ESP32-BLE.csproj.GenerateResource.Cache
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\obj\Debug\ESP32-BLE.csproj.CoreCompileInputs.cache
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\obj\Debug\ESP32-BLE.exe
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\obj\Debug\ESP32-BLE.pdb
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\bin\Debug\System.Runtime.WindowsRuntime.dll
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\bin\Debug\Windows.winmd
+c:\users\lenovo\source\repos\ESP32-BLE\ESP32-BLE\bin\Debug\System.Runtime.WindowsRuntime.xml
