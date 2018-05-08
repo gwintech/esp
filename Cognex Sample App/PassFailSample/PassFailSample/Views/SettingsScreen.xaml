@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:PassFailSample.Converters;assembly=PassFailSample"
+             x:Class="PassFailSample.Views.SettingsScreen"
+             BackgroundColor="{StaticResource LightBackgroundColor}"
+             Title="Settings"
+             NavigationPage.HasBackButton="False">
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Grid Margin="20,20,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Grid.Column="0" Spacing="10">
+                        <Label Text="Enable Demo Mode" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                        <Label Text="Enable Barcode Scanned Screen" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                        <Label Text="Enable Failure Feedback Screen" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                        <Label Text="Enable Custom Input Screen" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                        <Label Text="Enable User Login Screen" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                        <Label Text="Use Workflow End Timestamp" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    </StackLayout>
+                    <StackLayout Grid.Column="2" Spacing="10">
+                        <Switch IsToggled="{Binding Settings.BoolDemoMode}" />
+                        <Switch IsToggled="{Binding Settings.BoolBarcodeScannedScreenEnabled}" />
+                        <Switch IsToggled="{Binding Settings.BoolFailureFeedbackScreenEnabled}" />
+                        <Switch IsToggled="{Binding Settings.BoolCustomInputScreenEnabled}" />
+                        <Switch IsToggled="{Binding Settings.BoolUserLoginScreenEnabled}" />
+                        <Switch IsToggled="{Binding Settings.BoolUseLoggedEntryTime}" />
+                    </StackLayout>
+                </Grid>
+                <StackLayout Margin="20,0,20,20">
+                    <Label Text="Pass Button Label" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.TextPassButton}" FontSize="16" BackgroundColor="White" />
+                    <Label Text="Fail Button Label" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.TextFailButton}" FontSize="16" BackgroundColor="White" />
+                    <Label Text="Application Name" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.AppName}" FontSize="16" BackgroundColor="White" />
+                    <Label Text="Navigation Bar Title" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.NavigationBarTitle}" FontSize="16" BackgroundColor="White" />
+
+                    <Label Text="Failure Reasons ('; ' separated)" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.ListFailureReasons}" FontSize="16" BackgroundColor="White" />
+                    <Label Text="Additional Status Options ('; ' separated)" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.ListAdditionalStatusOptions}" FontSize="16" BackgroundColor="White" />
+
+                    <Label Text="User ID Entry Prompt" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.PromptUserLogin}" FontSize="16" BackgroundColor="White" />
+                    <Label Text="Scan Requested Screen Prompt" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.PromptScanStation}" FontSize="16" BackgroundColor="White" />
+                    <Label Text="Select Failure Reason Prompt" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.PromptSelectFailureReason}" FontSize="16" BackgroundColor="White" />
+                    <Label Text="Specify Failure Reason Prompt" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.PromptSpecifyFailureReason}" FontSize="16" BackgroundColor="White" />
+                    
+                    
+                    <Label Text="Color Green" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.ColorPass}" FontSize="16" BackgroundColor="White" />
+                    <Label Text="Color Red" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.ColorFail}" FontSize="16" BackgroundColor="White" />
+                    <Label Text="Color Button" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Settings.ColorStandardButton}" FontSize="16" BackgroundColor="White" />
+
+                    <Label Text="Password" Style="{StaticResource SmallText}" HorizontalOptions="Start" />
+                    <Entry HorizontalOptions="FillAndExpand" Text="{Binding Password}" FontSize="16" BackgroundColor="White" />
+
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

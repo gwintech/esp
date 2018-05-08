@@ -1,0 +1,71 @@
+﻿using PassFailSample.Helpers;
+using PassFailSample.Models;
+using PassFailSample.Utilities.Navigation;
+using System;
+using System.Collections.Generic;
+using System.Windows.Input;
+using Xamarin.Forms;
+
+namespace PassFailSample.ViewModels
+{
+    public class MainPageMasterViewModel : BaseViewModel
+    {
+        #region Properties
+
+        // The overall list that will keep track of which view models can be navigated
+        // to and displayed in the "master" portion of master/detail
+        public List<IMasterListItem<BaseViewModel>> AvailablePages { get; set; }
+
+        private string _title;
+        public string Title
+        {
+            get => this._title;
+            set
+            {
+                this._title = value;
+                this.SetProperty(ref this._title, value);
+            }
+        }
+
+        public ICommand NavigateCommand { get; private set; }
+        private CredentialsService CredentialsService {get; set; }
+
+        #endregion
+
+        #region Constructor
+
+        public MainPageMasterViewModel(IdleTimeoutTimer timer, Settings settings, CredentialsService credentialsService) : base(timer, settings)
+        {
+            // This is where we add the view models we can navigate to
+            // And the descriptions to be displayed
+            AvailablePages = new List<IMasterListItem<BaseViewModel>>();
+            AvailablePages.Add(new MasterListItem<HomeScreenViewModel>("Scan Barcode"));
+            AvailablePages.Add(new MasterListItem<PasswordScreenViewModel>("Settings"));
+
+            Title = "Navigation";
+            this.CredentialsService = credentialsService;
+            this.NavigateCommand = new Command(selectedItem => GoToSelectedScreen(selectedItem));
+        }
+
+        #endregion
+
+        #region Private Methods
+
+        private void GoToSelectedScreen(object selectedItem)
+        {
+            // Get the selected item from the command
+            var itemToNavigate = selectedItem as IMasterListItem<BaseViewModel>;
+
+            if (itemToNavigate != null)
+            {
+                // Get the view model type
+                var viewModelType = itemToNavigate.GetType().GenericTypeArguments[0];
+
+                // Switch Detail Page
+                this.NavService.SwitchDetailPage(viewModelType);
+            }
+        }
+
+        #endregion
+    }
+}
